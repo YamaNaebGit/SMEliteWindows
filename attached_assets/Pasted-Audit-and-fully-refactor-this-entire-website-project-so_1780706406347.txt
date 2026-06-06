@@ -1,0 +1,98 @@
+Audit and fully refactor this entire website project so it deploys flawlessly on Netlify as a pure static site with zero 404 errors, zero broken routes, zero missing assets, and zero hosting issues.
+
+PRIMARY GOAL:
+Make this repository structurally and technically match a working Netlify-hosted Vite static site (like Pear Tree Elevate), while preserving all current design, content, branding, pages, images, animations, and functionality.
+
+CRITICAL OBJECTIVE:
+Fix whatever is causing Netlify to return 404 by converting this project into a fully static, production-ready deployment structure.
+
+REQUIRED TECHNICAL FIXES:
+
+ROOT STRUCTURE:
+Ensure the project root contains:
+index.html
+public/
+src/
+package.json
+vite.config.ts
+netlify.toml
+
+If any of these are missing, create/fix them.
+
+STATIC ENTRY:
+Ensure root index.html exists
+Must contain:
+<div id="root"></div>
+Proper Vite entry to /src/main.tsx
+Remove any broken framework-specific server dependencies
+PUBLIC FOLDER:
+Audit all assets
+Move misplaced static files into /public
+Remove nested folders like /public/site if present
+Fix all image, favicon, logo, and font paths
+Ensure assets load correctly after deployment
+VITE CONFIG:
+Refactor to standard Vite static configuration
+Remove broken base paths
+Remove deployment-breaking path prefixes
+Ensure build output goes to:
+dist
+PACKAGE.JSON:
+Ensure scripts are:
+"dev": "vite"
+"build": "vite build"
+
+Remove unnecessary server, SSR, or incompatible deployment dependencies.
+
+NETLIFY CONFIG:
+Create or repair netlify.toml:
+[build]
+command = "npm run build"
+publish = "dist"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+SPA ROUTING:
+Add public/_redirects with:
+/* /index.html 200
+Prevent all page refresh 404s
+Ensure internal links work properly
+REMOVE DEPLOYMENT CONFLICTS:
+Delete Cloudflare/Vercel/Wrangler-specific files
+Remove unsupported SSR or edge configs
+Remove anything conflicting with static Netlify hosting
+BUILD VALIDATION:
+Confirm npm install succeeds
+Confirm npm run build succeeds
+Confirm /dist generates correctly
+Confirm Netlify drag-and-drop deploy works
+Confirm GitHub → Netlify auto deploy works
+PRESERVE WEBSITE:
+DO NOT redesign or rewrite content.
+Keep:
+Current branding
+Layout
+Construction theme
+Images
+Text
+SEO
+Mobile responsiveness
+Animations
+
+FINAL RESULT:
+A clean, lightweight, static Vite website that:
+
+Deploys instantly on Netlify
+Has no 404 errors
+Uses dist output
+Has proper root structure
+Loads all pages correctly
+Loads all assets correctly
+Works on page refresh
+Requires zero manual fixes
+
+IMPORTANT:
+Prioritize fixing deployment architecture over everything else. The finished project should behave exactly like a stable, professional Netlify static website.

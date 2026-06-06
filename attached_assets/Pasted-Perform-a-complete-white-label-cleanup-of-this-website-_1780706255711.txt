@@ -1,0 +1,81 @@
+Perform a complete white-label cleanup of this website.
+
+This project was originally created in Lovable and has been imported into Replit. I want all traces of Lovable completely removed from both the website and codebase.
+
+Tasks:
+
+1. BRANDING REMOVAL
+
+* Remove all Lovable logos
+* Remove all Lovable icons
+* Remove all Lovable references in the UI
+* Remove all Lovable links
+* Remove all Lovable attribution text
+* Remove any "Built with Lovable" references
+* Remove Lovable metadata from the site
+
+2. LOGO REPLACEMENT
+
+* Replace every instance of the Lovable logo with the pressure washing company's logo
+* Use the company logo in:
+
+  * Navbar
+  * Mobile menu
+  * Footer
+  * Browser favicon
+  * Social sharing previews
+  * Any loading screens
+  * Any structured data or branding references
+
+3. SEO & METADATA
+
+* Replace Lovable branding in:
+
+  * Page title
+  * Meta descriptions
+  * Open Graph tags
+  * Twitter/X cards
+  * Structured data
+  * Canonical tags
+  * Browser tab title
+
+4. IMAGE CLEANUP
+
+* Review all images and assets
+* Remove any Lovable-generated placeholders that contain Lovable branding
+* Ensure all images match the pressure washing business brand
+* Replace generic placeholders where appropriate with professional pressure washing imagery
+
+5. CODEBASE CLEANUP
+
+* Search the entire project for:
+
+  * "lovable"
+  * "Lovable"
+  * lovable.dev
+  * lovable.app
+* Remove or replace every occurrence
+* Remove unused Lovable-specific dependencies if present
+* Remove any comments referencing Lovable
+
+6. BUSINESS BRANDING
+   Use the pressure washing company as the sole brand throughout the website:
+
+* Company logo
+* Company name
+* Company colors
+* Company contact information
+* Company service area
+* Company messaging
+
+7. FINAL VERIFICATION
+   Perform a full project scan and confirm:
+
+* No Lovable branding remains anywhere
+* No Lovable references remain in code
+* No Lovable links remain
+* No Lovable metadata remains
+* No Lovable images remain
+* The website appears as a fully custom-built pressure washing company website
+
+Provide a summary of every file modified and every Lovable reference removed.
