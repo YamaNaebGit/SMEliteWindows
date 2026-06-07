@@ -1,4 +1,4 @@
-import { Sparkles, ShieldCheck, Home, Droplets, Phone, Mail, MapPin, Check, Star, ArrowRight, Building2, Trees } from "lucide-react";
+import { Sparkles, ShieldCheck, Home, Droplets, Phone, Mail, MapPin, Check, Star, ArrowRight, Building2, Trees, GripVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-washing.jpg";
 import logo from "@/assets/sm-elite-logo.png";
@@ -7,6 +7,11 @@ import imgDriveway from "@/assets/service-driveway.jpg";
 import imgDeck from "@/assets/service-deck.jpg";
 import imgCommercial from "@/assets/service-commercial.jpg";
 import imgWindows from "@/assets/service-windows.jpg";
+import imgJob1Before from "@/assets/job1-before.png";
+import imgJob1After from "@/assets/job1-after.png";
+import imgJob2Before from "@/assets/job2-before.png";
+import imgJob2After from "@/assets/job2-after.png";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 const PHONE = "226-724-4690";
 const EMAIL = "Stefon.Morgan3021@gmail.com";
@@ -176,6 +181,99 @@ function Services() {
   );
 }
 
+interface SliderProps {
+  beforeSrc: string;
+  afterSrc: string;
+  beforeAlt: string;
+  afterAlt: string;
+  caption: string;
+}
+
+function ComparisonSlider({ beforeSrc, afterSrc, beforeAlt, afterAlt, caption }: SliderProps) {
+  const [position, setPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const updatePosition = useCallback((clientX: number) => {
+    const container = containerRef.current;
+    if (!container) return;
+    const rect = container.getBoundingClientRect();
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    setPosition((x / rect.width) * 100);
+  }, []);
+
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+    updatePosition(e.clientX);
+  }, [updatePosition]);
+
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    setIsDragging(true);
+    updatePosition(e.touches[0].clientX);
+  }, [updatePosition]);
+
+  useEffect(() => {
+    const onMouseMove = (e: MouseEvent) => { if (isDragging) updatePosition(e.clientX); };
+    const onTouchMove = (e: TouchEvent) => { if (isDragging) { e.preventDefault(); updatePosition(e.touches[0].clientX); } };
+    const onUp = () => setIsDragging(false);
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onUp);
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
+    window.addEventListener("touchend", onUp);
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onUp);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onUp);
+    };
+  }, [isDragging, updatePosition]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative w-full h-[340px] md:h-[420px] rounded-3xl overflow-hidden shadow-elegant border border-white/10 select-none cursor-col-resize"
+      onMouseDown={onMouseDown}
+      onTouchStart={onTouchStart}
+    >
+      <img src={afterSrc} alt={afterAlt} className="absolute inset-0 w-full h-full object-cover" draggable={false} />
+
+      <div className="absolute inset-0 overflow-hidden" style={{ width: `${position}%` }}>
+        <img
+          src={beforeSrc}
+          alt={beforeAlt}
+          className="absolute inset-0 h-full object-cover"
+          style={{ width: containerRef.current ? `${containerRef.current.offsetWidth}px` : "100%" }}
+          draggable={false}
+        />
+      </div>
+
+      <div
+        className="absolute inset-y-0 w-0.5 bg-white shadow-[0_0_12px_rgba(255,255,255,0.9)] z-10"
+        style={{ left: `${position}%`, transform: "translateX(-50%)" }}
+      />
+      <div
+        className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white shadow-elegant flex items-center justify-center z-20"
+        style={{ left: `${position}%` }}
+      >
+        <GripVertical className="w-5 h-5 text-navy-deep" />
+      </div>
+
+      <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[11px] font-bold bg-navy-deep/90 text-white backdrop-blur border border-white/10 pointer-events-none z-10">
+        BEFORE
+      </div>
+      <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[11px] font-bold bg-brand-gradient text-white pointer-events-none shadow-glow z-10">
+        AFTER
+      </div>
+
+      <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-navy-deep via-navy-deep/50 to-transparent pointer-events-none z-10">
+        <p className="text-xs font-semibold text-white">{caption}</p>
+        <p className="text-[11px] text-white/55 mt-0.5">Drag to compare · Real customer result</p>
+      </div>
+    </div>
+  );
+}
+
 function BeforeAfter() {
   const bullets = [
     { icon: Sparkles, title: "Removes dirt, oil, mold & algae", desc: "Our high-pressure systems lift the toughest grime in one pass." },
@@ -185,38 +283,51 @@ function BeforeAfter() {
   return (
     <section id="results" className="relative py-24 md:py-32 bg-hero text-white overflow-hidden">
       <div className="absolute top-1/2 -translate-y-1/2 -right-40 w-[28rem] h-[28rem] rounded-full bg-brand/30 blur-3xl" />
-      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-bright">See the difference</p>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold">
-            Professional results <br /> you can <span className="text-gradient-brand">see & trust.</span>
-          </h2>
-          <p className="mt-5 text-lg text-white/80">
-            Is your driveway covered in dirt, stains, mold, or algae? Let us bring it back to life — fast, reliable, and affordable.
-          </p>
-          <ul className="mt-10 space-y-6">
-            {bullets.map(({ icon: Icon, title, desc }) => (
-              <li key={title} className="flex gap-4">
-                <div className="shrink-0 w-12 h-12 rounded-2xl bg-brand-gradient grid place-items-center shadow-glow">
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg">{title}</h3>
-                  <p className="text-white/70">{desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="relative max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-bright">See the difference</p>
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold">
+              Professional results <br /> you can <span className="text-gradient-brand">see & trust.</span>
+            </h2>
+            <p className="mt-5 text-lg text-white/80">
+              These are real jobs from real customers in Ontario. Drag the sliders to see the dramatic transformation we deliver — every single time.
+            </p>
+            <ul className="mt-10 space-y-6">
+              {bullets.map(({ icon: Icon, title, desc }) => (
+                <li key={title} className="flex gap-4">
+                  <div className="shrink-0 w-12 h-12 rounded-2xl bg-brand-gradient grid place-items-center shadow-glow">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">{title}</h3>
+                    <p className="text-white/70">{desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <a href={`tel:${PHONE}`} className="mt-10 inline-block">
+              <Button size="lg" className="bg-brand-gradient text-primary-foreground hover:opacity-95 shadow-glow rounded-full px-7 h-14 text-base">
+                <Phone className="w-4 h-4 mr-2" /> Get This Result for Your Property
+              </Button>
+            </a>
+          </div>
 
-        <div className="relative">
-          <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-elegant">
-            <img src={imgDriveway} alt="Driveway before and after pressure washing" loading="lazy" width={1024} height={1024} className="w-full h-[520px] object-cover" />
-            <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold bg-navy-deep text-white">BEFORE</div>
-            <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold bg-brand-gradient text-white">AFTER</div>
-            <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-navy-deep to-transparent">
-              <p className="font-semibold">Driveway Power Wash · Real customer result</p>
-            </div>
+          <div className="flex flex-col gap-6">
+            <ComparisonSlider
+              beforeSrc={imgJob1Before}
+              afterSrc={imgJob1After}
+              beforeAlt="Dirty stained concrete driveway before power washing"
+              afterAlt="Clean bright concrete driveway after power washing"
+              caption="Driveway Power Wash · Ontario"
+            />
+            <ComparisonSlider
+              beforeSrc={imgJob2Before}
+              afterSrc={imgJob2After}
+              beforeAlt="Mold and algae covered stone pillar before soft washing"
+              afterAlt="Restored clean stone pillar after soft washing"
+              caption="Stone Pillar Soft Wash · Ontario"
+            />
           </div>
         </div>
       </div>
