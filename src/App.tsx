@@ -75,12 +75,15 @@ function Hero() {
             <Sparkles className="w-4 h-4 text-brand-bright" />
             New customers get 25% off their first service
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.05] tracking-tight">
-            Make your property
-            <span className="block text-gradient-brand">shine like new.</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.08] tracking-tight">
+            Professional Power Washing in
+            <span className="block text-gradient-brand">Windsor, Ontario</span>
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-white/80 max-w-xl">
-            Spotless, streak-free windows and powerful exterior cleaning that restores curb appeal instantly. Residential & commercial across Ontario.
+          <p className="mt-4 text-lg md:text-xl font-semibold text-white/90 max-w-xl">
+            Driveways, houses, decks & exterior cleaning – affordable and reliable local service
+          </p>
+          <p className="mt-3 text-base md:text-lg text-white/70 max-w-xl">
+            Streak-free windows and powerful exterior cleaning that restores curb appeal instantly. Residential & commercial across Ontario.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a href={`tel:${PHONE}`}>
