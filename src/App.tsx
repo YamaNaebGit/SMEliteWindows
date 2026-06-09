@@ -472,7 +472,7 @@ function Footer() {
           </p>
         </div>
         <div>
-          <h4 className="font-semibold text-white">Services</h4>
+          <h3 className="font-semibold text-white">Services</h3>
           <ul className="mt-3 space-y-2 text-sm">
             <li className="flex items-center gap-2"><Sparkles className="w-4 h-4 text-brand-bright" /> Window Cleaning</li>
             <li className="flex items-center gap-2"><Droplets className="w-4 h-4 text-brand-bright" /> Power Washing</li>
@@ -481,7 +481,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="font-semibold text-white">Contact</h4>
+          <h3 className="font-semibold text-white">Contact</h3>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href={`tel:${PHONE}`} className="underline underline-offset-2 hover:text-brand-bright hover:decoration-brand-bright transition-colors duration-200">{PHONE}</a></li>
             <li><a href={`mailto:${EMAIL}`} className="underline underline-offset-2 hover:text-brand-bright hover:decoration-brand-bright break-all transition-colors duration-200">{EMAIL}</a></li>
