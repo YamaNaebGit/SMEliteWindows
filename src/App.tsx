@@ -1,16 +1,16 @@
 import { Sparkles, ShieldCheck, Home, Droplets, Phone, Mail, MapPin, Check, Star, ArrowRight, Building2, Trees, GripVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-washing.jpg";
-import logo from "@/assets/sm-elite-logo.png";
-import imgHouse from "@/assets/service-house.jpg";
-import imgDriveway from "@/assets/service-driveway.jpg";
-import imgDeck from "@/assets/service-deck.jpg";
-import imgCommercial from "@/assets/service-commercial.jpg";
-import imgWindows from "@/assets/service-windows.jpg";
-import imgJob1Before from "@/assets/job1-before.png";
-import imgJob1After from "@/assets/job1-after.png";
-import imgJob2Before from "@/assets/job2-before.png";
-import imgJob2After from "@/assets/job2-after.png";
+import heroImg from "@/assets/hero-washing.webp";
+import logo from "@/assets/sm-elite-logo.webp";
+import imgHouse from "@/assets/service-house.webp";
+import imgDriveway from "@/assets/service-driveway.webp";
+import imgDeck from "@/assets/service-deck.webp";
+import imgCommercial from "@/assets/service-commercial.webp";
+import imgWindows from "@/assets/service-windows.webp";
+import imgJob1Before from "@/assets/job1-before.webp";
+import imgJob1After from "@/assets/job1-after.webp";
+import imgJob2Before from "@/assets/job2-before.webp";
+import imgJob2After from "@/assets/job2-after.webp";
 import { useRef, useState, useCallback, useEffect } from "react";
 
 const PHONE = "226-724-4690";
@@ -63,7 +63,7 @@ function Hero() {
   return (
     <section id="top" className="relative pt-28 md:pt-32 overflow-hidden bg-hero text-white">
       <div className="absolute inset-0 opacity-30">
-        <img src={heroImg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
+        <img src={heroImg} alt="" className="w-full h-full object-cover" width={1600} height={900} fetchPriority="high" decoding="sync" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/60 to-navy-deep/95" />
       <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-brand/30 blur-3xl animate-float-slow" />
@@ -110,7 +110,7 @@ function Hero() {
         <div className="md:col-span-5 relative hidden md:block">
           <div className="absolute inset-0 bg-brand/30 blur-3xl rounded-full" />
           <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-white/10 animate-float-slow">
-            <img src={imgWindows} alt="Professional window cleaning service Windsor Ontario – streak-free results" width={1024} height={1024} className="w-full h-[480px] object-cover" />
+            <img src={imgWindows} alt="Professional window cleaning service Windsor Ontario – streak-free results" width={800} height={800} className="w-full h-[480px] object-cover" fetchPriority="high" decoding="async" />
           </div>
         </div>
       </div>
@@ -167,7 +167,7 @@ function Services() {
           {services.map((s) => (
             <article key={s.title} className="group rounded-3xl overflow-hidden bg-card border border-border shadow-sm hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={s.img} alt={s.alt} loading="lazy" width={1024} height={768} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={s.img} alt={s.alt} loading="lazy" decoding="async" width={800} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-navy-deep">{s.title}</h3>
@@ -239,7 +239,7 @@ function ComparisonSlider({ beforeSrc, afterSrc, beforeAlt, afterAlt, caption }:
       onMouseDown={onMouseDown}
       onTouchStart={onTouchStart}
     >
-      <img src={afterSrc} alt={afterAlt} className="absolute inset-0 w-full h-full object-cover" draggable={false} />
+      <img src={afterSrc} alt={afterAlt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" draggable={false} />
 
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${position}%` }}>
         <img
@@ -247,6 +247,8 @@ function ComparisonSlider({ beforeSrc, afterSrc, beforeAlt, afterAlt, caption }:
           alt={beforeAlt}
           className="absolute inset-0 h-full object-cover"
           style={{ width: containerRef.current ? `${containerRef.current.offsetWidth}px` : "100%" }}
+          loading="lazy"
+          decoding="async"
           draggable={false}
         />
       </div>
