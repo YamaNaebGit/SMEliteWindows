@@ -271,7 +271,7 @@ function ComparisonSlider({ beforeSrc, afterSrc, beforeAlt, afterAlt, caption }:
 
       <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-navy-deep via-navy-deep/50 to-transparent pointer-events-none z-10">
         <p className="text-xs font-semibold text-white">{caption}</p>
-        <p className="text-[11px] text-white/55 mt-0.5">Drag to compare · Real customer result</p>
+        <p className="text-[11px] text-white/75 mt-0.5">Drag to compare · Real customer result</p>
       </div>
     </div>
   );
@@ -490,18 +490,18 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 text-xs text-white/50 flex flex-wrap justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-6 py-5 text-xs text-white/70 flex flex-wrap justify-between gap-3">
           <span>© {new Date().getFullYear()} SM Elite Window Cleaning & Power Washing. All rights reserved.</span>
           <span>Free quotes · 25% off your first service</span>
         </div>
         <div className="border-t border-white/5">
-          <div className="max-w-7xl mx-auto px-6 py-3 text-center text-[11px] text-white/30">
+          <div className="max-w-7xl mx-auto px-6 py-3 text-center text-[11px] text-white/60">
             Website Designed &amp; Maintained by{" "}
             <a
               href="https://www.yamanaeb.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-brand-bright transition-colors duration-200 hover:underline underline-offset-2"
+              className="text-white/65 hover:text-brand-bright transition-colors duration-200 hover:underline underline-offset-2"
             >
               YamaNaeb Web Design
             </a>
