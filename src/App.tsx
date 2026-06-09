@@ -44,10 +44,10 @@ function Nav() {
           </div>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-navy">
-          <a href="#services" className="hover:text-brand transition">Services</a>
-          <a href="#results" className="hover:text-brand transition">Results</a>
-          <a href="#why" className="hover:text-brand transition">Why Us</a>
-          <a href="#contact" className="hover:text-brand transition">Contact</a>
+          <a href="#services" className="underline underline-offset-4 decoration-transparent hover:text-brand hover:decoration-brand transition-all duration-200">Services</a>
+          <a href="#results" className="underline underline-offset-4 decoration-transparent hover:text-brand hover:decoration-brand transition-all duration-200">Results</a>
+          <a href="#why" className="underline underline-offset-4 decoration-transparent hover:text-brand hover:decoration-brand transition-all duration-200">Why Us</a>
+          <a href="#contact" className="underline underline-offset-4 decoration-transparent hover:text-brand hover:decoration-brand transition-all duration-200">Contact</a>
         </nav>
         <a href={`tel:${PHONE}`}>
           <Button className="bg-brand-gradient text-primary-foreground hover:opacity-95 shadow-glow rounded-full px-5">
@@ -172,7 +172,7 @@ function Services() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-navy-deep">{s.title}</h3>
                 <p className="mt-2 text-muted-foreground">{s.desc}</p>
-                <a href={`tel:${PHONE}`} className="mt-4 inline-flex items-center gap-2 text-brand font-semibold group-hover:gap-3 transition-all">
+                <a href={`tel:${PHONE}`} className="mt-4 inline-flex items-center gap-2 text-brand font-semibold underline underline-offset-2 decoration-transparent hover:decoration-brand group-hover:gap-3 transition-all duration-200">
                   Get a quote <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
@@ -483,8 +483,8 @@ function Footer() {
         <div>
           <h4 className="font-semibold text-white">Contact</h4>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href={`tel:${PHONE}`} className="hover:text-brand-bright">{PHONE}</a></li>
-            <li><a href={`mailto:${EMAIL}`} className="hover:text-brand-bright break-all">{EMAIL}</a></li>
+            <li><a href={`tel:${PHONE}`} className="underline underline-offset-2 hover:text-brand-bright hover:decoration-brand-bright transition-colors duration-200">{PHONE}</a></li>
+            <li><a href={`mailto:${EMAIL}`} className="underline underline-offset-2 hover:text-brand-bright hover:decoration-brand-bright break-all transition-colors duration-200">{EMAIL}</a></li>
             <li>Ontario, Canada</li>
           </ul>
         </div>
