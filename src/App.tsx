@@ -37,7 +37,7 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/75 border-b border-border/60">
       <div className="max-w-7xl mx-auto px-6 h-18 py-3 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logo} alt="SM Elite Windows logo" className="h-11 w-11 object-contain" />
+          <img src={logo} alt="SM Elite Window Cleaning and Power Washing – Windsor Ontario" className="h-11 w-11 object-contain" />
           <div className="hidden sm:block leading-tight">
             <div className="font-bold text-navy-deep">SM Elite</div>
             <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Window Cleaning & Power Washing</div>
@@ -110,7 +110,7 @@ function Hero() {
         <div className="md:col-span-5 relative hidden md:block">
           <div className="absolute inset-0 bg-brand/30 blur-3xl rounded-full" />
           <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-white/10 animate-float-slow">
-            <img src={imgWindows} alt="Streak-free window cleaning" width={1024} height={1024} className="w-full h-[480px] object-cover" />
+            <img src={imgWindows} alt="Professional window cleaning service Windsor Ontario – streak-free results" width={1024} height={1024} className="w-full h-[480px] object-cover" />
           </div>
         </div>
       </div>
@@ -143,12 +143,12 @@ function TrustBar() {
 
 function Services() {
   const services = [
-    { title: "Window Cleaning", desc: "Crystal clear, streak-free interior & exterior glass — residential and commercial.", img: imgWindows },
-    { title: "Driveway Power Washing", desc: "Removes dirt, oil, mold & algae. Cleaner, safer, better curb appeal.", img: imgDriveway },
-    { title: "House Soft Washing", desc: "Gentle, deep clean for vinyl siding, brick, and stucco — no damage, just shine.", img: imgHouse },
-    { title: "Deck & Patio Cleaning", desc: "Restore weathered wood and stone surfaces back to life.", img: imgDeck },
-    { title: "Commercial Cleaning", desc: "Storefronts, sidewalks, and exteriors that put your best face forward.", img: imgCommercial },
-    { title: "Full Exterior Refresh", desc: "Bundle services and save — we'll make your whole property sparkle.", img: heroImg },
+    { title: "Window Cleaning", desc: "Crystal clear, streak-free interior & exterior glass — residential and commercial.", img: imgWindows, alt: "Professional window cleaning service Windsor Ontario – streak-free glass" },
+    { title: "Driveway Power Washing", desc: "Removes dirt, oil, mold & algae. Cleaner, safer, better curb appeal.", img: imgDriveway, alt: "Power washing driveway Windsor Ontario – removing dirt oil and mold" },
+    { title: "House Soft Washing", desc: "Gentle, deep clean for vinyl siding, brick, and stucco — no damage, just shine.", img: imgHouse, alt: "Pressure washing house exterior Windsor Ontario – siding and brick cleaning" },
+    { title: "Deck & Patio Cleaning", desc: "Restore weathered wood and stone surfaces back to life.", img: imgDeck, alt: "Deck cleaning service Windsor Ontario – restoring weathered wood and stone" },
+    { title: "Commercial Cleaning", desc: "Storefronts, sidewalks, and exteriors that put your best face forward.", img: imgCommercial, alt: "Commercial pressure washing Windsor Ontario – storefront and sidewalk cleaning" },
+    { title: "Full Exterior Refresh", desc: "Bundle services and save — we'll make your whole property sparkle.", img: heroImg, alt: "Full exterior cleaning service Windsor Ontario – complete property power washing" },
   ];
   return (
     <section id="services" className="py-24 md:py-32">
@@ -167,7 +167,7 @@ function Services() {
           {services.map((s) => (
             <article key={s.title} className="group rounded-3xl overflow-hidden bg-card border border-border shadow-sm hover:shadow-elegant hover:-translate-y-1 transition-all duration-300">
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={s.img} alt={s.title} loading="lazy" width={1024} height={768} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={s.img} alt={s.alt} loading="lazy" width={1024} height={768} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-navy-deep">{s.title}</h3>
@@ -320,15 +320,15 @@ function BeforeAfter() {
             <ComparisonSlider
               beforeSrc={imgJob1Before}
               afterSrc={imgJob1After}
-              beforeAlt="Dirty stained concrete driveway before power washing"
-              afterAlt="Clean bright concrete driveway after power washing"
+              beforeAlt="Stained concrete driveway before power washing service Windsor Ontario"
+              afterAlt="Clean bright driveway after professional power washing Windsor Ontario"
               caption="Driveway Power Wash · Ontario"
             />
             <ComparisonSlider
               beforeSrc={imgJob2Before}
               afterSrc={imgJob2After}
-              beforeAlt="Mold and algae covered stone pillar before soft washing"
-              afterAlt="Restored clean stone pillar after soft washing"
+              beforeAlt="Mold and algae covered stone pillar before soft washing Windsor Ontario"
+              afterAlt="Restored clean stone pillar after professional soft washing Windsor Ontario"
               caption="Stone Pillar Soft Wash · Ontario"
             />
           </div>
@@ -461,7 +461,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="SM Elite Windows" className="h-12 w-12 object-contain" />
+            <img src={logo} alt="SM Elite Window Cleaning and Power Washing Windsor Ontario" className="h-12 w-12 object-contain" />
             <div>
               <div className="font-bold text-white">SM Elite</div>
               <div className="text-xs uppercase tracking-widest text-white/60">Window Cleaning & Power Washing</div>
