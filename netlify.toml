@@ -1,9 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "corepack prepare npm@9.8.1 --activate && npm install && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
+  SKIP_DEPENDENCY_INSTALL = "true"
 
 [[redirects]]
   from = "/*"
