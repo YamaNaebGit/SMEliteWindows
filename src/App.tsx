@@ -1,12 +1,13 @@
 import { Sparkles, ShieldCheck, Home, Droplets, Phone, Mail, MapPin, Check, Star, ArrowRight, Building2, Trees, GripVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-washing.jpg";
+import heroImg from "@/assets/real-hero-driveway.jpg";
 import logo from "@/assets/sm-elite-logo.png";
-import imgHouse from "@/assets/service-house.jpg";
-import imgDriveway from "@/assets/service-driveway.jpg";
-import imgDeck from "@/assets/service-deck.jpg";
-import imgCommercial from "@/assets/service-commercial.jpg";
-import imgWindows from "@/assets/service-windows.jpg";
+import imgHouse from "@/assets/real-service-house.jpg";
+import imgDriveway from "@/assets/real-service-driveway.jpg";
+import imgDeck from "@/assets/real-service-deck.jpg";
+import imgCommercial from "@/assets/real-service-commercial.jpg";
+import imgWindows from "@/assets/real-service-windows.jpg";
+import imgWindowsCard from "@/assets/real-service-windows2.jpg";
 import imgJob1Before from "@/assets/job1-before.png";
 import imgJob1After from "@/assets/job1-after.png";
 import imgJob2Before from "@/assets/job2-before.png";
@@ -143,7 +144,7 @@ function TrustBar() {
 
 function Services() {
   const services = [
-    { title: "Window Cleaning", desc: "Crystal clear, streak-free interior & exterior glass — residential and commercial.", img: imgWindows, alt: "Professional window cleaning service Windsor Ontario – streak-free glass" },
+    { title: "Window Cleaning", desc: "Crystal clear, streak-free interior & exterior glass — residential and commercial.", img: imgWindowsCard, alt: "Professional window cleaning service Windsor Ontario – streak-free glass" },
     { title: "Driveway Power Washing", desc: "Removes dirt, oil, mold & algae. Cleaner, safer, better curb appeal.", img: imgDriveway, alt: "Power washing driveway Windsor Ontario – removing dirt oil and mold" },
     { title: "House Soft Washing", desc: "Gentle, deep clean for vinyl siding, brick, and stucco — no damage, just shine.", img: imgHouse, alt: "Pressure washing house exterior Windsor Ontario – siding and brick cleaning" },
     { title: "Deck & Patio Cleaning", desc: "Restore weathered wood and stone surfaces back to life.", img: imgDeck, alt: "Deck cleaning service Windsor Ontario – restoring weathered wood and stone" },
