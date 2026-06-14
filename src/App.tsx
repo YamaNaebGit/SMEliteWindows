@@ -111,7 +111,7 @@ function Hero() {
         <div className="md:col-span-5 relative hidden md:block">
           <div className="absolute inset-0 bg-brand/30 blur-3xl rounded-full" />
           <div className="relative rounded-3xl overflow-hidden shadow-elegant border border-white/10 animate-float-slow">
-            <img src={imgWindows} alt="Professional window cleaning service Windsor Ontario – streak-free results" width={1024} height={1024} className="w-full h-[480px] object-cover" />
+            <img src={heroImg} alt="Professional power washing driveway cleaning Windsor Ontario – before and after results" width={1024} height={1024} className="w-full h-[480px] object-cover object-center" />
           </div>
         </div>
       </div>
