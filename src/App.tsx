@@ -20,6 +20,7 @@ const EMAIL = "Stefon.Morgan3021@gmail.com";
 export default function App() {
   return (
     <div className="min-h-screen bg-background">
+      <AnnouncementBar />
       <Nav />
       <Hero />
       <TrustBar />
@@ -33,9 +34,28 @@ export default function App() {
   );
 }
 
+function AnnouncementBar() {
+  return (
+    <div className="fixed top-0 inset-x-0 z-[60] bg-brand-gradient text-white">
+      <div className="max-w-7xl mx-auto px-4 h-10 flex items-center justify-center gap-3 text-sm font-medium">
+        <span className="hidden sm:inline">🚀</span>
+        <span className="font-semibold tracking-wide">Get a Fast, Free Quote Online</span>
+        <a
+          href="https://quoti.ai/book/sm-eilte-window-"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-2 inline-flex items-center px-4 py-1 rounded-full bg-white text-brand font-bold text-xs uppercase tracking-wider shadow-sm transition-all duration-200 hover:bg-white/90 hover:scale-105 hover:shadow-md"
+        >
+          Book Now
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function Nav() {
   return (
-    <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/75 border-b border-border/60">
+    <header className="fixed top-10 inset-x-0 z-50 backdrop-blur-xl bg-background/75 border-b border-border/60">
       <div className="max-w-7xl mx-auto px-6 h-18 py-3 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-3">
           <img src={logo} alt="SM Elite Window Cleaning and Power Washing – Windsor Ontario" className="h-11 w-11 object-contain" />
@@ -62,7 +82,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative pt-28 md:pt-32 overflow-hidden bg-hero text-white">
+    <section id="top" className="relative pt-36 md:pt-40 overflow-hidden bg-hero text-white">
       <div className="absolute inset-0 opacity-30">
         <img src={heroImg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
       </div>
