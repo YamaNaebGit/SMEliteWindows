@@ -1,6 +1,6 @@
 import { Sparkles, ShieldCheck, Home, Droplets, Phone, Mail, MapPin, Check, Star, ArrowRight, Building2, Trees, GripVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/real-hero-driveway.png";
+import heroImg from "@/assets/real-hero-driveway.jpg";
 import logo from "@/assets/sm-elite-logo.png";
 import imgHouse from "@/assets/real-service-house.jpg";
 import imgDriveway from "@/assets/real-service-driveway.jpg";
