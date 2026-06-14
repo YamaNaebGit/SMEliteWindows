@@ -20,6 +20,7 @@ const EMAIL = "Stefon.Morgan3021@gmail.com";
 export default function App() {
   return (
     <div className="min-h-screen bg-background">
+      <FloatingBookButton />
       <AnnouncementBar />
       <Nav />
       <Hero />
@@ -31,6 +32,34 @@ export default function App() {
       <Contact />
       <Footer />
     </div>
+  );
+}
+
+function FloatingBookButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <a
+      href="https://quoti.ai/book/sm-eilte-window-"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Book your free quote"
+      className={[
+        "fixed bottom-6 right-6 z-[70] flex items-center gap-2 px-5 py-3 rounded-full",
+        "bg-brand-gradient text-white font-bold text-sm shadow-glow",
+        "transition-all duration-300 hover:scale-105 hover:shadow-xl",
+        visible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0 pointer-events-none",
+      ].join(" ")}
+    >
+      <Phone className="w-4 h-4 shrink-0" />
+      Book Now — It's Free
+    </a>
   );
 }
 
